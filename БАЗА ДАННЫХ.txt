@@ -1,0 +1,5 @@
+музыка
+придумать три таблицы
+CREATE TABLE class
+(id_class INTEGER PRIMARY KEY,
+name_class VARCHAR(30))

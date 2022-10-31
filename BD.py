@@ -17,10 +17,18 @@ cur = sql_con.cursor()
 #         name_m varchar(30) not null,
 #         foreign key (id_instrum)
 #             references instrument(id_instrum));''')
-cur.execute('''insert into musician(id_instrum,id_m,name_m)
-values (8,null,'Микеланджело Росси' )''')
+# cur.execute('''insert into musician(id_instrum,id_m,name_m)
+# values (8,null,'Микеланджело Росси' )''')
+def InstrumClass():
+    cur.execute('''select name_instrum, name_class 
+    from class as cl inner join instrument as ins where
+    cl.id_class == ins.id_class   ''')
+    rows=cur.fetchall()
+    for row in rows:
+        print(row)
 
-sql_con.commit()
+InstrumClass()
+# sql_con.commit()
 
 sql_con.close()
 
